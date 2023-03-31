@@ -12,8 +12,6 @@
 - [프로그래머스](https://programmers.co.kr/)
 <br />
 
-
-
 ## 이번 주 정기 스터디 시간에 풀 문제
 ##### 매주 화요일 업데이트!
 - 백준 11399 ATM
@@ -75,6 +73,7 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
+import java.util.ArrayList;
 
 public class Main { // 클래스명 Main으로 변경
     static class Node { // inner class 사용 -> 패키지 내 중복 방지
@@ -111,6 +110,12 @@ public class Main { // 클래스명 Main으로 변경
         int m = Integer.parseInt(st.nextToken()); 
         
         String array[] = br.reandLine().split(" "); // 공백마다 데이터 끊어서 배열에 넣음
+        
+        ArrayList<Integer> list = new ArrayList<>();
+        while (st.hasMoreTokens()) {
+            list.add(Integer.parseInt(st.nextToken()));
+        }
+        
         ...
         
         
@@ -133,14 +138,14 @@ public class Main { // 클래스명 Main으로 변경
 
 > 파이썬 입력 예시
 ```python
-import sys
-
 // 일반적인 입력
+s = input()
 n, m = map(int, input().split())
 
 // 시간 초과를 대비한 입력
-input = sys.stdin.readline
-n, m = map(int, input().split())
+import sys
+s = sys.stdin.readline().rstrip()
+n, m = map(int, sys.stdin.readline().split())
 
 
 // 출력
@@ -148,6 +153,20 @@ print()
 ```
 <br />
 
+## Git Repository 폴더 구조 (제출 양식 맞춰주세요!)
+#### <이름>/<백준단계제목>/<파일명.java>
+
+> 예시
+- byeongmin/그리디알고리즘/ATM.java
+- byeongmin/그래프와순회/바이러스.java
+<br />
+
+## Pull Request Message 
+#### <주차> <백준단계제목> <(푼 문제 수)n문제> <완료>
+
+> 예시
+- Week01 그리디알고리즘 5문제 완료
+<br />
 
 ## Commit & Branch & Pull Request 
 > Commit
