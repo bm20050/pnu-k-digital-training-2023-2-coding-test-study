@@ -1,6 +1,9 @@
 # 부산대학교 K-Digital Training 2023-2 Coding Test Study
 <br/>
 
+### 4월 4일에 GitHub Desktop 사용법 알려드릴게요!!
+<br />
+
 > 교재 
 - 이것이 취업을 위한 코딩 테스트다 with 파이썬(한빛미디어 나동빈 지음)
 - [유튜브 채널 동빈나](https://www.youtube.com/@dongbinna)
@@ -73,6 +76,7 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
+import java.util.ArrayList;
 
 public class Main { // 클래스명 Main으로 변경
     static class Node { // inner class 사용 -> 패키지 내 중복 방지
@@ -109,6 +113,12 @@ public class Main { // 클래스명 Main으로 변경
         int m = Integer.parseInt(st.nextToken()); 
         
         String array[] = br.reandLine().split(" "); // 공백마다 데이터 끊어서 배열에 넣음
+        
+        ArrayList<Integer> list = new ArrayList<>();
+        while (st.hasMoreTokens()) {
+            list.add(Integer.parseInt(st.nextToken()));
+        }
+        
         ...
         
         
@@ -131,14 +141,14 @@ public class Main { // 클래스명 Main으로 변경
 
 > 파이썬 입력 예시
 ```python
-import sys
-
 // 일반적인 입력
+s = input()
 n, m = map(int, input().split())
 
 // 시간 초과를 대비한 입력
-input = sys.stdin.readline
-n, m = map(int, input().split())
+import sys
+s = sys.stdin.readline().rstrip()
+n, m = map(int, sys.stdin.readline().split())
 
 
 // 출력
