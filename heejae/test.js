@@ -4,3 +4,5 @@ console.log(arr2);
 arr[1] = 4;
 console.log(arr)
 console.log(arr2);
+
+arr
