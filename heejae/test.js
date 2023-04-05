@@ -1,8 +1,6 @@
-const arr = [1, 2];
-let arr2 = [3, ...arr];
-console.log(arr2);
-arr[1] = 4;
-console.log(arr)
-console.log(arr2);
+const arr = [0, 31, 24, 10, 1, 9];
 
-arr
+console.log(Math.max(...arr))
+arr.shift()
+arr.filter()
+
