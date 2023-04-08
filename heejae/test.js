@@ -1,5 +1,1 @@
-let a= 100;
-
-
-console.log(String(a).split(''))
-
+console.log("U".toUpperCase())

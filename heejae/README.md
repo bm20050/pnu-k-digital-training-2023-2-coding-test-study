@@ -28,4 +28,5 @@
  .reduce((a, c, i) => a + c * ++i)));
  ```
 
+
  https://vscode.dev/profile/github/8c06c32353e1732708565d7c10a5edd3
