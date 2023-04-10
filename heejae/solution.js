@@ -1,27 +1,21 @@
-const remove = Symbol();
-Array.prototype[remove] = function (idx) {
-  return (idx < 0 || idx > this.length) ? this : this =this.slice(0, idx).concat(this.slice(idx + 1, this.length));
-};
-
-Array.prototype.map2 = function (i) {
-  let temp = [];
-  for (let a of this) {
-      temp.push(i(a))
+function solution(key, bd) {
+  let ans = [0, 0];
+  for (let a of key) {
+    switch (a) {
+      case 'left': if (ans[0] > -(bd[0] - 1) / 2) ans[0] -= 1;
+        break;
+      case 'right': if (ans[0] < (bd[0] - 1) / 2) ans[0] += 1;
+        break;
+      case 'up': if (ans[1] < (bd[1] - 1) / 2) ans[1] += 1;
+        break;
+      case 'down': if (ans[1] > -(bd[1] - 1) / 2) ans[1] -= 1;
+        break;
+    }
   }
-  return temp;
-}
-Array.prototype.forEach2 = function (i) {
-  for (let i=0; i<this.length; i++) {
-
-  }
-}
-
-function solution(arr) {
-  arr[remove](1)
-    return arr
+  return ans;
 }
 
 console.log(solution(
-  [0, 1, 4]
+  ["left", "left", "left", "left", "right", "right", "right", "right"], [5, 5]
 ))
-// [1,3,0,1]
+// "[2, 1]

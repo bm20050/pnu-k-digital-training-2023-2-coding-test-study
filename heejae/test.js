@@ -1,14 +1,9 @@
-class abc {
-    name = 'kildong'
-    constructor (dkj){
-        this.name = dkj
-    }
-    
-    
-    a=()=>{
-        this.name = "haha";
+a={
+    b:(i)=>{
+       return  i+2
     }
 }
-let a= new abc('dsds')
-a.a();
-console.log(a)
+let k = 'b'
+console.log(
+    a.k(3)
+)
