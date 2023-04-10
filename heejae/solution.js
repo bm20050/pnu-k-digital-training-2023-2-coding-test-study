@@ -14,8 +14,9 @@ function solution(key, bd) {
   }
   return ans;
 }
-
+///
+ㅏ
 console.log(solution(
   ["left", "left", "left", "left", "right", "right", "right", "right"], [5, 5]
 ))
-// "[2, 1]
+// "[2, 1]brdsdf
