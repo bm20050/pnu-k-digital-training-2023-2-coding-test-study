@@ -1,23 +1,26 @@
-function solution(n, words) {
-  var answer = words[0];
-  let num = [0, 0]
-
-  for (let i = 1; i < words.length; i++) {
-    if (answer.includes(words[i])) {
-      num = [i % n + 1, Math.ceil((i+1)/n)];
-      break
-    };
-    if (words[i - 1][words[i - 1].length - 1] !== words[i][0]) {
-      num = [i % n + 1, Math.ceil((i+1)/n)];
-      break;
+function solution(n) {
+    function fib(k){
+        if (k <= 2) return 1;
+        return fib(k-2) + fib(k-1);
     }
-    answer = answer + " " + words[i];
+    return fib(n)%1234567;
   }
-  return num;
-}
-
-console.log(solution(
-  2, ['ac','ca','ac','aa',"ac"]
-
-))
-    // [2,2]
+  
+  function solution(n) {
+    now=0;
+    preb= 1;
+    prebb= 0;
+    for (let i =2 ; i<=n; i++){
+      now = (preb+ prebb)%1234567
+      prebb = preb;
+      preb = now;
+    }
+    return now
+  }
+  [0,1,1,2,3,5,8,13]
+  
+  console.log(solution(
+    5
+  ))
+    // 5
+  
