@@ -1,21 +1,16 @@
-function solution(key, bd) {
-    let ans = [0, 0];
-    for (let a of key) {
-      switch (a) {
-        case 'left': if (ans[0] > -(bd[0] - 1) / 2) ans[0] -= 1;
-          break;
-        case 'right': if (ans[0] < (bd[0] - 1) / 2) ans[0] += 1;
-          break;
-        case 'up': if (ans[1] < (bd[1] - 1) / 2) ans[1] += 1;
-          break;
-        case 'down': if (ans[1] > -(bd[1] - 1) / 2) ans[1] -= 1;
-          break;
-      }
+function solution(a, b) {
+  a = [...a];
+  b = [...b];
+  k: for (let i = 0; i < a.length; i++) {
+    for (let j = 0; j < a.length; j++) {
+      if (b[(j + i) % a.length] !== a[j]) continue k;
+      return i;
     }
-    return ans;
   }
-  
-  console.log(solution(
-    ["left", "left", "left", "left", "right", "right", "right", "right"], [5, 5]
-  ))
-  // "[2, 1]
+  return -1;
+}
+
+console.log(solution(
+  "apple", "elppa"
+));
+// -1
