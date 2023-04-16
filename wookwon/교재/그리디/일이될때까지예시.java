@@ -1,3 +1,5 @@
+package 교재;
+
 import java.util.Scanner;
 
 public class 일이될때까지예시 {

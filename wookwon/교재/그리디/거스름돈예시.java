@@ -1,3 +1,5 @@
+package 교재;
+
 public class 거스름돈예시 {
     public static void main(String[] args) {
         int n = 1260;

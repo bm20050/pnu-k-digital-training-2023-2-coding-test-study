@@ -1,3 +1,5 @@
+package 교재;
+
 import java.util.Scanner;
 
 public class 곱하기혹은더하기예시 {
