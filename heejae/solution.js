@@ -30,7 +30,7 @@ function solution(n) {
 
   // k!
   let fac = (k) => {
-    if (k==0 || k == 1) return 1;
+    if (k == 0 || k == 1) return 1;
     return k * fac(k - 1);
   }
 
@@ -47,7 +47,7 @@ function solution(n) {
     }
     return ans;
   }
- 
+
   let sel2 = (p) => {
     // 세로로 그대로 세워두기를 2개를 0부터 ~n/2개까지 선택하는 경우의 수
     for (let i = 0; i <= n / 2; i++) {
