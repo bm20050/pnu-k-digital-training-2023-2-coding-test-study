@@ -1,4 +1,14 @@
-let a = [1,3,4,5]
-if (a.pop()>0) a.shift()
+let ans = []
+let pr =[1, 1, 6, 5]
+function add(ar){
+    for (let i = ans.length; i<ar[3]; i++) ans.push([])
+    for (let y = ar[1]; y<ar[3]; y++){
+        for (let x = ar[0]; x<ar[2]; x++){
+            ans[y][x]=1;
+        }
+    }
+}
+add(pr);
+add([4, 3, 8, 6])
 
-console.log(a)
+console.log(ans);
