@@ -7,9 +7,10 @@ function solution(a, b, c, n = 0) {
 }
 
 // ??
-// https://blog.naver.com/doctorgu/222992407249 콜라병 문제 수학공식이 있는듯
 solution = (a, b, n) => Math.floor(Math.max(n - b, 0) / (a - b)) * b
-
+// 처음 교환에는 마실 콜라가 없으므로 n-b로 시작
+// 콜라가 a-b병씩만 소모된다고 보고 전체 교환회수를 구한뒤
+// 교환시 콜라주는 수 곱해서 소수점 버림
 
 
 console.log(solution(
