@@ -11,4 +11,4 @@ function add(ar){
 add(pr);
 add([4, 3, 8, 6])
 
-console.log(ans);
+console.log(Math.max(2,3,3,3));
