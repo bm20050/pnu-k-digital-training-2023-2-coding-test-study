@@ -1,4 +1,4 @@
-let ans = []
+let ans = [].slice()
 let pr =[1, 1, 6, 5]
 function add(ar){
     for (let i = ans.length; i<ar[3]; i++) ans.push([])
