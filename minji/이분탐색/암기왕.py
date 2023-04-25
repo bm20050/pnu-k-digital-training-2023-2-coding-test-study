@@ -1,5 +1,6 @@
 import sys
 
+
 def binary_search(array, target, start, end):
     while start <= end:
         mid = (start + end) // 2
@@ -22,7 +23,7 @@ for _ in range(t):
 
     for i in array2:
         result = binary_search(array1, i, 0, n - 1)
-        if result != None:
+        if result is not None:
             print(1)
         else:
             print(0)
