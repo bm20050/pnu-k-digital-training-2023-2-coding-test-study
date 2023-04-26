@@ -1,21 +1,37 @@
 const input = require("fs").readFileSync(process.platform === 'linux' ? "/dev/stdin" : __dirname + "/input.txt")
-s = input.toString().trim().split('\n');
-const req = s[1].split(' ').map(Number)
-const max = Number(s[2]);
-let left = 0;
-let right = Math.max(...req)
-while (left < right) {
-    const mid = Math.ceil((left + right) / 2);
-    let sum = req.reduce((a, c) => a + (c > mid ? mid : c),0);
-    sum > max ? right = mid - 1 : left = mid;
-}
-console.log(left)
+let s = input.toString().trim().split('\n');
+s.shift();
+s = s.sort((a, b) => b.length - a.length);
+s = s.map(i => "0".repeat(s[0].length - i.length) + i)
 
-
-let [[N], I, [M]] = `${require('fs').readFileSync(0)}`.trim().split`\n`.map(e => e.split` `.map(Number))
-let [l, r] = [0, Math.max(...I)]
-while (l < r) {
-  const mid = Math.ceil((l + r) / 2)
-  I.reduce((a, b) => a + (b > mid ? mid : b), 0) > M ? (r = mid - 1) : (l = mid)
+function ckcount(idx, ary) {
+  let temp = {};
+  ary.forEach(j => {
+    if (j[idx] && j[idx].replace(/\d/, '').length) temp[j[idx]] = (temp[j[idx]] | 0) + 1;
+  })
+  return temp;
 }
-console.log(l)
+
+let t = 9
+for (let i = 0; i < s[0].length; i++) {
+  let count = ckcount(i, s)
+  let keyset = Object.keys(count)
+
+  keyset.sort((a, b) => {
+    let j = i
+    while (j < s[0].length) {
+      temp = (count[b] || 0) - (count[a] || 0);
+      if (temp) return temp;
+      else {
+        count = ckcount(++j, s);
+      }
+    }
+    return 0;
+  })
+
+  for (let i = 0; i < keyset.length; i++) {
+  }
+  t -= keyset.length
+}
+s = s.map(Number);
+console.log(s.reduce((a, c) => a + c, 0));
