@@ -1,26 +1,16 @@
-function solution(n) {
-    function fib(k){
-        if (k <= 2) return 1;
-        return fib(k-2) + fib(k-1);
+function solution(n, a = Array(1).fill(n)) {
+    if (n == 1) return a;
+    else if (n % 2) {
+        a.push(3 * n + 1)
+        return solution(3 * n + 1, a)
     }
-    return fib(n)%1234567;
-  }
-  
-  function solution(n) {
-    now=0;
-    preb= 1;
-    prebb= 0;
-    for (let i =2 ; i<=n; i++){
-      now = (preb+ prebb)%1234567
-      prebb = preb;
-      preb = now;
+    else {
+        a.push(n / 2)
+        return solution(n / 2, a);
     }
-    return now
-  }
-  [0,1,1,2,3,5,8,13]
-  
-  console.log(solution(
-    5
-  ))
-    // 5
-  
+}
+'dd'.replace()
+console.log(solution(
+    10
+))
+  // 0a
