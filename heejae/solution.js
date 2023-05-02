@@ -1,16 +1,12 @@
-function solution(n, a = Array(1).fill(n)) {
-    if (n == 1) return a;
-    else if (n % 2) {
-        a.push(3 * n + 1)
-        return solution(3 * n + 1, a)
+function solution(a) {
+    let ans =new Set()
+    for (let i=1; i<a.length;i++){
+        ans.add(Math.min(...a.slice(0,i)))
+        ans.add(Math.min(...a.slice(i)))
     }
-    else {
-        a.push(n / 2)
-        return solution(n / 2, a);
-    }
+    return ans.size
 }
-'dd'.replace()
 console.log(solution(
-    10
+    [-16,27,65,-2,58,-92,-71,-68,-61,-33]
 ))
   // 0a
