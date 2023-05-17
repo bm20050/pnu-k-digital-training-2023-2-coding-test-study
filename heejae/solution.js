@@ -1,14 +1,16 @@
-const solution = (str, pat) => str.substring(0, str.lastIndexOf(pat)) + pat
-
-function solution(myString, pat) {
-  let temp = [...myString].reverse().join('')
-  let ans = temp.slice(temp.indexOf([...pat].reverse().join('')))
-  return [...ans].reverse().join('')
-  
+function solution(n, a = Array(1).fill(n)) {
+    if (n == 1) return a;
+    else if (n % 2) {
+        a.push(3 * n + 1)
+        return solution(3 * n + 1, a)
+    }
+    else {
+        a.push(n / 2)
+        return solution(n / 2, a);
+    }
 }
-
+'dd'.replace()
 console.log(solution(
-    "AAAAaaaa",	"a"	
-
+    10
 ))
-//"AAAAaaaa"
+  // 0a
